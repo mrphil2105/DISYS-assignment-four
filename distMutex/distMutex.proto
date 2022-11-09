@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package distMutex;
+
+option go_package = "https://github.com/mrphil2105/DISYS-assignment-four;distMutex";
+
+service DistMutex {
+    rpc Connect(Void) returns (stream Message);
+}
+
+message Void {}
+
+message Message {
+    int32 pid = 1;
+    uint32 time = 2;
+}
